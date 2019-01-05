@@ -35,3 +35,13 @@ func TestCaptcha2MutiOne(t *testing.T) {
 		t.Errorf("it should say %q but get %q", expected, result)
 	}
 }
+
+func TestCaptchaFivePlus2(t *testing.T) {
+	expected := "five + 2"
+
+	result := captcha.Captcha(2, 5, 1, 2)
+
+	if expected != result {
+		t.Errorf("it should say %q but get %q", expected, result)
+	}
+}
