@@ -25,3 +25,13 @@ func TestCaptchaFourMinusTwo(t *testing.T) {
 		t.Errorf("it should say %q but get %q", expected, result)
 	}
 }
+
+func TestCaptchaTwoMutiOne(t *testing.T) {
+	expected := "2 x one"
+
+	result := captcha.Captcha(1, 2, 3, 1)
+
+	if expected != result {
+		t.Errorf("it should say %q but get %q", expected, result)
+	}
+}
