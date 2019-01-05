@@ -6,7 +6,7 @@ import (
 	"github.com/zesani/captcha"
 )
 
-func TestCaptchaFivePlusTwo(t *testing.T) {
+func TestCaptchaFivePlus2(t *testing.T) {
 	expected := "5 + two"
 
 	result := captcha.Captcha(1, 5, 1, 2)
@@ -16,7 +16,7 @@ func TestCaptchaFivePlusTwo(t *testing.T) {
 	}
 }
 
-func TestCaptchaFourMinusTwo(t *testing.T) {
+func TestCaptchaFourMinus2(t *testing.T) {
 	expected := "4 - two"
 
 	result := captcha.Captcha(1, 4, 2, 2)
@@ -26,7 +26,7 @@ func TestCaptchaFourMinusTwo(t *testing.T) {
 	}
 }
 
-func TestCaptchaTwoMutiOne(t *testing.T) {
+func TestCaptchaTwoMuti1(t *testing.T) {
 	expected := "2 x one"
 
 	result := captcha.Captcha(1, 2, 3, 1)
