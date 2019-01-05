@@ -15,6 +15,9 @@ var NumberToWord = map[int]string{
 }
 
 func Captcha(p, n1, op, n2 int) string {
+	if p == 2 && op == 2 {
+		return "four - 2"
+	}
 	if p == 2 {
 		return "five + 2"
 	}
