@@ -1,6 +1,9 @@
 package captcha
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 var NumberToWord = map[int]string{
 	1: "one",
@@ -15,21 +18,18 @@ var NumberToWord = map[int]string{
 }
 
 func Captcha(p, n1, op, n2 int) string {
+	str1 := NumberToWord[n1]
+	str2 := strconv.Itoa(n2)
 	if p == 1 {
-		switch op {
-		case 1:
-			return fmt.Sprintf("%v + %v", n1, NumberToWord[n2])
-		case 2:
-			return fmt.Sprintf("%v - %v", n1, NumberToWord[n2])
-		}
-		return fmt.Sprintf("%v x %v", n1, NumberToWord[n2])
-	} else {
-		switch op {
-		case 1:
-			return fmt.Sprintf("%v + %v", NumberToWord[n1], n2)
-		case 2:
-			return fmt.Sprintf("%v - %v", NumberToWord[n1], n2)
-		}
-		return fmt.Sprintf("%v x %v", NumberToWord[n1], n2)
+		str1 = strconv.Itoa(n1)
+		str2 = NumberToWord[n2]
 	}
+
+	switch op {
+	case 1:
+		return fmt.Sprintf("%v + %v", str1, str2)
+	case 2:
+		return fmt.Sprintf("%v - %v", str1, str2)
+	}
+	return fmt.Sprintf("%v x %v", str1, str2)
 }
